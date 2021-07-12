@@ -13,23 +13,27 @@
             text-decoration: line-through;
         }
     </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
 </head>
 
-<body ng-app="myApp" ng-controller="myController">
-    <h1 style="text-align: center;">Add Task</h1>
-    <input ng-model="task" ng-keyup="searchEnter()" type="text" style="display: block;margin: 0 auto;
+<body class="jumbotron jumbotron-fluid" ng-app="myApp" ng-controller="myController" style="background-color:darkorange;">
+    <h1 class="text-primary" style="text-align: center;">Add Task</h1>
+    <input placeholder="Enter your task here.." class="form-control" ng-model="task" ng-keyup="searchEnter()" type="text" style="display: block;margin: 0 auto;
     padding: 5px; font-size:15px ; width: 300px;">
-
+    <br><br>
     <div id="tasksToShow">
-        <ul>
-            <li ng-repeat="task1 in tasks">
+        <ul class="list-group">
+            <li ng-repeat="task1 in tasks" class="list-group-item list-group-item-success">
+                <p>
+                    <span class="done-{{task1.status}}" ng-model=" task1 ">
+                        {{task1}}
+                        <input  type="checkbox" ng-model="task1.status ">
+                        
+                        
+                    </span>
+                </p>
 
-                <span class="done-{{task1.status}}" ng-model=" task1 ">
-                    {{task1}}
-                    <input type="checkbox" ng-model="task1.status ">
-                    
-                    
-                </span>
 
             </li>
         </ul>
