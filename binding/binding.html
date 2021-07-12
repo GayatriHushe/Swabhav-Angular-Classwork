@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binding</title>
+</head>
+
+<body ng-app="main" ng-controller="MainController">
+    <section>
+        <h1>One way binding</h1>
+        <p>{{student.roll}}</p>
+        <p>{{student.name}}</p>
+        <p>{{student.cgpa}}</p>
+    </section>
+    <hr>
+    <section>
+        <h1>Two way binding</h1>
+        <input type="text" placeholder="roll" ng-model='student.roll'>
+        <input type="text" placeholder="name" ng-model='student.name'>
+        <input type="text" placeholder="cgpa" ng-model='student.cgpa'>
+
+        <p>{{student.roll}}</p>
+        <p>{{student.name}}</p>
+        <p>{{student.cgpa}}</p>
+    </section>
+    <hr>
+    <section>
+        <h1>One time binding</h1>
+        <p>{{::student.roll}}</p>
+        <p>{{::student.name}}</p>
+        <p>{{::student.cgpa}}</p>
+    </section>
+
+    <script src="angular.js"></script>
+    <script src="binding.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <style>
+        span.done-true {
+            color: gray;
+            font-style: italic;
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+
+<body ng-app="myApp" ng-controller="myController">
+    <h1 style="text-align: center;">Add Task</h1>
+    <input ng-model="task" ng-keyup="searchEnter()" type="text" style="display: block;margin: 0 auto;
+    padding: 5px; font-size:15px ; width: 300px;">
+
+    <div id="tasksToShow">
+        <ul>
+            <li ng-repeat="task1 in tasks">
+
+                <span class="done-{{task1.status}}" ng-model=" task1 ">
+                    {{task1}}
+                    <input type="checkbox" ng-model="task1.status ">
+                    
+                    
+                </span>
+
+            </li>
+        </ul>
+    </div>
+    <script src="angular.js "></script>
+    <script src="index.js "></script>
+    <script src="moment.js "></script>
+</body>
+
+</html>
