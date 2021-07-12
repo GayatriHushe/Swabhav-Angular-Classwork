@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numbers API</title>
+</head>
+
+<body ng-app="myApp" ng-controller="myController">
+
+    <label>No : </label>
+    <input type="number" ng-model="no">
+    <button ng-click="showQuotes()">Show Quotes</button>
+    <br><br>
+    <div id="quotesToShow">
+        <ul>
+            <li ng-repeat="q in quotes">
+                {{q}}
+            </li>
+        </ul>
+    </div>
+    <script src="angular.js"></script>
+    <script src="numberApi.js"></script>
+</body>
+
+</html>
