@@ -1,0 +1,78 @@
+<html>
+
+<head>
+    <title>Search Page</title>
+</head>
+
+<body>
+    <form ng-submit="createStudent()" ng-show="studentForm">
+
+        <h1>Student Details</h1>
+
+        <div class="form-group" ng-hide="studentid">
+            <label class="control-label col-md-2">ID</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" ng-model="student.id" />
+                <br>
+            </div>
+        </div>
+
+        <div class="col-md-offset-2 col-md-10 ">
+            <input type="submit " value="Get Details By ID " ng-click="getDetails(student.id) " class="btn btn-success btn-sm " ng-hide="details " />
+
+        </div>
+    </form>
+
+
+    <br>
+    <hr><br>
+    <h1 ng-show="studentListHead">Students List</h1>
+    <table ng-show="studentList" class="table table-striped ">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>Roll No</td>
+                <td>Name</td>
+                <td>Age</td>
+                <td>Email</td>
+                <td>Date</td>
+                <td>Gender</td>
+                <td>Options</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="student in students ">
+                <td>
+                    {{student.id}}
+                </td>
+                <td>
+                    {{student.rollNo}}
+                </td>
+                <td>
+                    {{student.name}}
+                </td>
+                <td>
+                    {{student.age}}
+                </td>
+                <td>
+                    {{student.email}}
+                </td>
+                <td>
+                    {{student.date}}
+                </td>
+                <td>
+                    {{student.isMale | gender}}
+                </td>
+
+                <td>
+                    <button class="btn btn-success btn-sm " ng-click="selectStudent(student)"><a href="#/edit">Edit</a></button>
+                    <button class="btn btn-danger btn-sm " ng-click="deleteData(student.id) ">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</body>
+
+</html>

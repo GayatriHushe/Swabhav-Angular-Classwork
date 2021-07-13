@@ -1,0 +1,61 @@
+<html>
+
+<head>
+    <title>Add Page</title>
+</head>
+
+<body>
+    <form ng-submit="createStudent()">
+        <br><br>
+        <h1>Student Details</h1>
+
+        <div class="form-group" ng-show="studentid">
+            <label class="control-label col-md-2">ID</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" ng-model="student.id" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">Roll No:</label>
+            <div class="col-md-4">
+                <input type="number" name="studentRollNo" class="form-control" ng-model="student.rollNo" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">Name:</label>
+            <div class="col-md-4">
+                <input type="text" name="studentName" ng-maxlength="10" class="form-control" ng-model="student.name" />
+            </div>
+        </div>
+        <div class="form-group ">
+            <label class="control-label col-md-2 ">Age:</label>
+            <div class="col-md-4 ">
+                <input type="number " class="form-control " ng-model="student.age " />
+            </div>
+        </div>
+        <div class="form-group ">
+            <label class="control-label col-md-2 ">Email:</label>
+            <div class="col-md-4 ">
+                <input type="text " name="studentEmail " class="form-control " ng-model="student.email " />
+            </div>
+        </div>
+        <div class="form-group ">
+            <label class="control-label col-md-2 ">Date:</label>
+            <div class="col-md-4 ">
+                <input type="text" class="form-control " ng-model="student.date " />
+            </div>
+        </div>
+        <div class="form-group ">
+            <label class="control-label col-md-2 ">Is Male:</label>
+            <div class="col-md-4 ">
+                <input type="text " class="form-control " ng-model="student.isMale " />
+            </div>
+        </div>
+        <div class="col-md-offset-2 col-md-10 ">
+            <input type="submit " value="Add Details " ng-click="addStudent() " class="btn btn-success btn-sm " />
+        </div>
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom directive</title>
+</head>
+
+<body ng-app="myApp" ng-controller="myController">
+    <div>
+        <gayatri-header company-id="companyId"></gayatri-header>
+        <gayatri-footer company-name="companyName"></gayatri-footer>
+
+    </div>
+    <script src="angular.js"></script>
+    <script>
+        angular.module('myApp', [])
+            .controller('myController', function($scope) {
+                $scope.companyId = "1";
+                $scope.companyName = "AurionPro";
+            })
+            .directive("gayatriHeader", function() {
+                return {
+                    restrict: 'E',
+                    companyId: "=",
+                    template: '<div class="header"><h1>{{companyId}}</h1></div>'
+                }
+            })
+            .directive("gayatriFooter", function() {
+                return {
+                    restrict: 'E',
+                    companyName: "=",
+                    template: '<div class="footer"><h1>{{companyName}}</h1></div>'
+                }
+            })
+    </script>
+
+</body>
+
+
+
+</html>

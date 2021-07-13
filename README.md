@@ -50,3 +50,27 @@ Day 34 : 12/7/21
 		  - studentApi.html
 	      - studentApi.js 
 	  
+Day 35 : 13/7/21
+  - Programs :
+      - spaWiki
+		  - wiki.html
+	  - miniSPA
+		  - index.html
+	      - app.js
+		  - controller.js
+		  - templates
+		      - about.html
+			  - career.html
+			  - home.html
+	  - customDirective
+		  - customDirective.html
+	  - studentSpa
+		  - index.html
+	      - app.js
+		  - controller.js
+		  - templates
+		      - add.html
+			  - edit.html
+			  - home.html
+			  - search.html
+	  
