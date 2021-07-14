@@ -1,0 +1,82 @@
+<html>
+
+<head>
+    <title>Home Page</title>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.2/css/star-rating.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.2/js/star-rating.min.js"></script>
+
+</head>
+
+<body>
+
+
+    <div class="container" align="center">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title"><strong>Product List</strong></h3>
+            </div>
+
+            <div class="panel-footer ">
+
+                <div class="form-group" ng-show="filterOptions">
+                    <label class="control-label col-md-2">Filter By :</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" ng-model="searchProduct" />
+                    </div>
+                </div>
+                <br>
+                <hr>
+                <br>
+
+                <table ng-show="productTable" class="table table-striped ">
+                    <thead>
+                        <tr>
+                            <td><button style="background-color: blue;"><p style="color: white;" ng-click="showImage()">Show Image</p></button></td>
+                            <td style="color: blue;">Product</td>
+                            <td style="color: blue;">Code</td>
+                            <td style="color: blue;">Available</td>
+                            <td style="color: blue;">Price</td>
+                            <td style="color: blue;">5 Star rating</td>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="product in products | filter:searchProduct ">
+                            <td>
+                                <img ng-hide="productImages" ng-src="{{product.imageUrl}}" height="30px" class="image">
+                            </td>
+                            <td>
+                                <a ng-click="showDetails(product)" href="#/productDetails">{{product.productName}}</a>
+                            </td>
+                            <td>
+                                {{product.productCode}}
+                            </td>
+                            <td>
+                                {{product.releaseDate}}
+                            </td>
+                            <td>
+                                {{product.price}}
+                            </td>
+                            <td>
+                                <input class="rating rating-loading" value="{{product.starRating}}" data-min="0" data-max="5" data-step="0.5" data-size="xs">
+                            </td>
+
+                        </tr>
+                    </tbody>
+
+                </table>
+
+
+            </div>
+        </div>
+
+    </div>
+    <script>
+        $("#input-id").rating();
+    </script>
+
+</body>
+
+</html>

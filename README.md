@@ -74,3 +74,18 @@ Day 35 : 13/7/21
 			  - home.html
 			  - search.html
 	  
+Day 36 : 14/7/21
+  - Programs :
+      - acmeSpa
+		  - index.html
+	      - app.js
+		  - controller.js
+		  - products.json
+		  - templates
+		      - home.html
+			  - product.html
+			  - productDetails.html
+			  - images
+			      - logo.jpg
+	      - images
+			  - logo.jpg
